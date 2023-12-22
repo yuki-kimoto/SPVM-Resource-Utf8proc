@@ -29,10 +29,12 @@ MyClass.c:
   
   int32_t SPVM__MyClass__test(SPVM_ENV* env, SPVM_VALUE* stack) {
     
-    // ...
+    const char* string = "あいう";
     
-    int32_t string_ret_length = spvm_utf8proc_map(string, 0, &string_ret_tmp, SPVM_UTF8PROC_NULLTERM | SPVM_UTF8PROC_STABLE |
-    SPVM_UTF8PROC_COMPOSE);
+    char* string_ret_tmp = NULL;
+    
+    int32_t string_ret_length = utf8proc_map(string, 0, &string_ret_tmp, UTF8PROC_NULLTERM | UTF8PROC_STABLE |
+    UTF8PROC_COMPOSE);
     
     return 0;
   }
