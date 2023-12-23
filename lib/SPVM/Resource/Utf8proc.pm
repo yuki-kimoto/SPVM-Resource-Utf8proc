@@ -79,6 +79,14 @@ GNU C99
 
 =back
 
+=head1 Compiler Flags
+
+=over 2
+
+=item * -DUTF8PROC_STATIC
+
+=back
+
 =head1 How to Create Resource
 
 =head2 Download
