@@ -20,11 +20,14 @@ MyClass.config:
   
   $config->use_resource('Resource::Utf8proc');
   
+  $config->add_ccflag('-DUTF8PROC_STATIC');
+  
   $config;
 
 MyClass.c:
 
   #include "spvm_native.h"
+  
   #include "utf8proc.h"
   
   int32_t SPVM__MyClass__test(SPVM_ENV* env, SPVM_VALUE* stack) {
@@ -39,12 +42,6 @@ MyClass.c:
     return 0;
   }
   
-  
-  
-=head1 Details
-
-
-
 =head1 Original Product
 
 The L<utf8proc|https://github.com/JuliaStrings/utf8proc> library.
@@ -60,6 +57,14 @@ The C language
 =head1 Language Specification
 
 GNU C99
+
+=head1 Required Compiler Flags
+
+=over 2
+
+=item * -DUTF8PROC_STATIC
+
+=back
 
 =head1 Header Files
 
